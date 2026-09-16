@@ -188,7 +188,8 @@ if __name__ == "__main__":
                 classification = classifier.get_response()
 
                 # Extract classification result and explanation
-                classification_result, explanation = classification.split("\n", 1) if "\n" in classification else (classification, "")
+                classification_result = classification["classification"]
+                explanation = classification["explanation"]
 
                 # Store classification result in Excel
                 new_classification = pd.DataFrame([{
